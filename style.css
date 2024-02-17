@@ -28,7 +28,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 12px 5px 12px 5px;
-    width: 150px;
+    min-width: 133px;
     min-height: 288px;
     max-height: 500px;
     height: 100%;
@@ -71,8 +71,8 @@ nav {
 }
 
 .links {
-    margin-bottom: 30px;
-    /* margin-top: 100px; */
+    margin-bottom: 20px;
+    margin-top: 30px;
     font-weight: 500;
 }
 
@@ -89,12 +89,30 @@ nav {
     color: rgb(221, 221, 221);
 }
 
+#sec-social-medias {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 0;
+    transition: 0.3s;
+}
+
+#sec-social-medias a img {
+    margin-top: 10px;
+    height: 0;
+    width: fit-content;
+    max-width: 95px;
+    transition: 0.3s;
+}
+
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 40px 30px;
+    padding: 0 10px;
     width: 100%;
     height: 100%;
     background-color: rgb(218, 206, 196);
@@ -163,6 +181,10 @@ section p{
     max-height: 100%;
 }
 
+#sec-i-am div p {
+    font-size: 20px;
+}
+
 #sec-i-am img {
     max-width: 428.750px;
     width: 100%;
@@ -187,7 +209,8 @@ section p{
 
 #sec-my-skills p {
     min-width: 700px;
-    max-width: 760px;
+    max-width: 700px;
+    font-size: 23px;
     text-align: justify;
 }
 
@@ -197,14 +220,6 @@ section p{
 
 #sec-my-skills img {
     margin-left: 3px;
-}
-
-#sec-social-medias {
-    display: none;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
 }
 
 @media screen and (max-width: 720px) {
