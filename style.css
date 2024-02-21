@@ -5,7 +5,8 @@
     font-family: "Quicksand", sans-serif;
 }
 
-body, html {
+body,
+html {
     width: 100%;
     height: 100%;
 }
@@ -43,7 +44,7 @@ nav {
     flex-direction: column;
 }
 
-.button-list button{
+.button-list button {
     margin-top: 20px;
     padding: 5px;
     width: 90px;
@@ -77,7 +78,7 @@ nav {
 }
 
 .links a {
-    padding: 3px 0 4px 3px ;
+    padding: 3px 0 4px 3px;
     border-left: 2px rgba(0, 0, 0, 0.425) solid;
     color: rgb(255, 255, 255);
     text-shadow: 0 2px 2px rgb(37, 16, 4);
@@ -112,12 +113,12 @@ main {
     justify-content: center;
     align-items: center;
     margin: 40px 30px;
-    padding: 0 10px;
+    padding: 30px 50px;
     width: 100%;
     height: 100%;
     background-color: rgb(218, 206, 196);
     border-top: 2px rgb(46, 22, 0) solid;
-    border-bottom: 2px rgb(46, 22, 0) solid ;
+    border-bottom: 2px rgb(46, 22, 0) solid;
     border-radius: 50px;
     transition: 0.5s;
 
@@ -137,11 +138,11 @@ section {
     height: 10%;
 }
 
-section h2{
+section h2 {
     font-weight: 700;
 }
 
-section p{
+section p {
     font-weight: 400;
     font-size: 25px;
     max-width: 550px;
@@ -154,11 +155,12 @@ section p{
 
 }
 
-.sec-welcome p{
+.sec-welcome p {
     border-left: 1px rgb(88, 43, 0) solid;
     border-radius: 5px;
-    padding: 6px 0  6px 10px;
-    max-width: 550px;
+    padding: 6px 0 6px 10px;
+    max-width: 560px;
+    text-align: justify;
 
 }
 
@@ -166,7 +168,7 @@ section p{
     height: auto;
     max-width: 350px;
     width: 100%;
- 
+
 }
 
 #sec-i-am {
@@ -183,13 +185,15 @@ section p{
 
 #sec-i-am div p {
     font-size: 20px;
+    text-align: justify;
 }
 
 #sec-i-am img {
-    max-width: 428.750px;
-    width: 100%;
-    max-height: 643.141px;
-    height: 100%;
+    margin-left: 20px;
+    max-width: 572px;
+    width: 45%;
+    max-height: 759px;
+    height: auto;
 }
 
 #sec-my-skills {
@@ -210,8 +214,8 @@ section p{
 #sec-my-skills p {
     min-width: 700px;
     max-width: 700px;
-    font-size: 23px;
     text-align: justify;
+    font-size: 23px;
 }
 
 #sec-my-skills h2 {
@@ -222,7 +226,16 @@ section p{
     margin-left: 3px;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 866px) {
+
+    html,
+    body {
+        height: auto;
+    }
+
+    main {
+        height: auto;
+    }
 
     nav {
         position: fixed;
@@ -230,7 +243,7 @@ section p{
         top: 25%;
         transform: translateX(-100%);
     }
-    
+
     section {
         flex-direction: column;
     }
@@ -240,9 +253,8 @@ section p{
     }
 
     #sec-i-am img {
-        width: auto;
+        width: 80%;
         margin-top: 100px;
-        max-height: 550px;
     }
 
 }

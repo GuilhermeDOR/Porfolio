@@ -7,11 +7,11 @@
 
 html, body {
     width: 100%;
-    height: auto;
+    height: 100vh;
 }
 
 .wrapper {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     background-color: rgb(226, 219, 211);
     padding: 10px;
@@ -45,7 +45,7 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 50px 30px;
-    height: auto;
+    min-height: 100%;
     width: auto;
 }
 
@@ -74,10 +74,6 @@ section {
     width: 100%;
 }
 
-.grid-container div {
-    text-align: center;
-}
-
 .grid-container div img {
     width: auto;
     height: 165px;
@@ -92,31 +88,119 @@ section {
     transform: scale(1.06);
 }
 
-.mascara-projeto {
+
+#project-page {
+    z-index: 1;
     visibility: hidden;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
     width: 100%;
-    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.836) 85%);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 0;
+    min-height: 100%;
+    padding: 35px 20px;
+    background-color: rgba(0, 0, 0, 0.938);
 }
 
-.caixa-video {
-    position: fixed;
-    z-index: -1;
-    top: 0;
+#placed-project {
+    width: auto;
+    max-width: 65%;
+    height: auto;
+    border: 4px rgb(207, 189, 145) solid;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(109, 99, 74);
 }
 
-.link-whatsap img {
-    height: 10vh;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
+.div-content {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+}
+
+#close-button {
+    color: rgb(207, 207, 207);
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 10px;
+    max-width: 28px;
+    height: 150px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    background-color: rgb(175, 68, 68);
+    cursor: pointer;
+    
+}
+
+#close-button:active {
+    transition: 0.2s;
+    background-color: rgba(175, 68, 68, 0.521);
+}
+
+#project-page .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.171);
+    border: 1px white solid;
+    border-radius: 4px;
+}
+
+#project-page h3 {
+    text-align: center;
+    border-bottom: 2px white solid;
+    color: #fcb32cfb;
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px #a37c33fb;
+
+}
+
+#project-page p {
+    max-width: 95%;
+    margin: 10px 0;
+    color: rgb(206, 198, 174);
+    font-weight: 400;
+    font-size: 25px;
+    text-align: justify;
+    
+}
+
+#project-page a {
+    color: rgb(209, 173, 106);
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+#project-page a:hover {
+    transition: 0.3s;
+    color: rgb(138, 112, 64);
+}
+
+#project-page a:active {
+    transition: 0.3s;
+    text-shadow: 0 0 2px rgb(138, 122, 95);
 }
 
 @media screen and (max-width: 1070px) {
+    html, body {
+        min-height: 100vh;
+    }
+
+    #project-page {
+        height: auto;
+    }
+
+    #placed-project {
+        max-width: 85%;
+    }
+
     .grid-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -140,6 +224,11 @@ section {
         height: 185px;
 
     }
+
+    #close-button {
+        font-size: 18px;
+        width: 25px;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -150,10 +239,6 @@ section {
 
     h2 {
         font-size: 20px;
-    }
-
-    .link-whatsap {
-        display: none;
     }
 
     .grid-container div img:hover {

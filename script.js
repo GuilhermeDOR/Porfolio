@@ -23,7 +23,7 @@ function buttonSelected(event) {
         setTimeout(() => {
             divDivs.forEach(secdiv => secdiv.style.display = 'none');
             section.forEach(sec => sec.style.display = 'none');
-        }, 130);
+        }, 200);
 
         setTimeout(() => {
             mainDiv.style.height = '15%';
@@ -44,7 +44,7 @@ function buttonSelected(event) {
         setTimeout(() => {
             divDivs.forEach(secdiv => secdiv.style.display = 'none');
             section.forEach(sec => sec.style.display = 'none');
-        }, 140);
+        }, 200);
 
         setTimeout(() => {
             mainDiv.style.height = '15%';

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" />
     <link rel="stylesheet" href="projects.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +13,19 @@
 </head>
 
 <body>
+
+    <div id="project-page">
+        <img id="placed-project" src="" alt="Starbucks">
+        <div class="div-content">
+            <button id="close-button">F E C H A R</button>
+            <div class="content">
+                <h3 id="project-tittle"></h3>
+                <p id="project-text"></p>
+                <a id="project-link" href="" target="_blank">ACESSAR</a>
+            </div>
+        </div>
+    </div>
+
     <div class="wrapper">
         <header>
             <a href="index.html">Voltar</a>
@@ -23,34 +37,29 @@
             <section>
 
                 <div class="grid-container">
-                    <div><img src="./img/printStarbucks.png" alt="Starbucks" class="project" onclick="abrirProjeto()">
-                    </div>
-                    <div><img src="" alt="Html Apresentação" class="project"></div>
-                    <div><img src="./img/printWeCare.png" alt="Projeto-We-Care" class="project"></div>
-                    <div><img src="./img/printEnergy.png" alt="Projeto-Site-Recompensa" class="project"></div>
-                    <div><img src="./img/MarioPrint.png" alt="Projeto-Mario-Brothers" class="project"></div>
-                    <div><img src="" alt="Discord Unu" class="project"></div>
-                    <div><img src="./img/printSiteMobile.png" alt="Projeto-Easy-Shopping" class="project"></div>
-                    <div class="mascara-projeto"></div>
+                    <div class="project"><img id="starbucks" src="./img/printStarbucks.png" alt="Starbucks"></div>
+                    <!-- <div class="project"><img id="apresentacao" src="" alt="Html Apresentação" ></div> -->
+                    <div class="project"><img id="wecare" src="./img/printWeCare.png" alt="Projeto-We-Care"></div>
+                    <div class="project"><img id="energy" src="./img/printEnergy.png" alt="Projeto-Site-Recompensa"></div>
+                    <div class="project"><img id="mario" src="./img/MarioPrint.png" alt="Projeto-Mario-Brothers"></div>
+                    <!-- <div class="project"><img id="unu" src="" alt="Discord Unu" ></div> -->
+                    <div class="project"><img id="easyshopping" src="./img/printSiteMobile.png" alt="Projeto-Easy-Shopping"></div>
+                    <!-- <div class="project" id=""><img src="" alt="Vago"></div>
+                    <div class="project" id=""><img src="" alt="Vago"></div>
+                    <div class="project" id=""><img src="" alt="Vago"></div>
+                    <div class="project" id=""><img src="" alt="Vago"></div>
+                    <div class="project" id=""><img src="" alt="Vago"></div> -->
                 </div>
 
             </section>
 
-            <h2>Projetos Futuros</h2>
-            <section class="section-two">
-
-                <div class="grid-container">
-                    <div>Conversor de Moeda</div>
-                    <div>Previsão do tempo</div>
-                    <div>Hamburgueria</div>
-                </div>
-
-            </section>
 
         </main>
 
     </div>
 
 </body>
+
+<script src="projects.js"></script>
 
 </html>
