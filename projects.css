@@ -11,10 +11,10 @@ html, body {
 }
 
 .wrapper {
-    min-height: 100%;
     width: 100%;
+    height: 100%;
     background-color: rgb(226, 219, 211);
-    padding: 10px;
+    padding: 0 10px 10px;
 }
 
 header {
@@ -45,8 +45,8 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 50px 30px;
-    min-height: 100%;
     width: auto;
+    height: auto;
 }
 
 h2 {
@@ -72,6 +72,7 @@ section {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
     width: 100%;
+    justify-items: center;
 }
 
 .grid-container div img {
@@ -98,25 +99,9 @@ section {
     align-items: center;
     position: absolute;
     width: 100%;
-    min-height: 100%;
+    height: 100vh;
     padding: 35px 20px;
     background-color: rgba(0, 0, 0, 0.938);
-}
-
-#placed-project {
-    width: auto;
-    max-width: 65%;
-    height: auto;
-    border: 4px rgb(207, 189, 145) solid;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgb(109, 99, 74);
-}
-
-.div-content {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 65%;
 }
 
 #close-button {
@@ -188,13 +173,42 @@ section {
     text-shadow: 0 0 2px rgb(138, 122, 95);
 }
 
+#placed-project {
+    width: auto;
+    max-width: 65%;
+    height: auto;
+    border: 4px rgb(207, 189, 145) solid;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(109, 99, 74);
+}
+
+.div-content {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+}
+
 @media screen and (max-width: 1070px) {
+
     html, body {
+        width: 100%;
         min-height: 100vh;
+        height: auto;
+    }
+
+    .wrapper {
+        min-height: 100vh;
+        height: 100%;
+    }
+
+    .div-content {
+        width: 95%;
     }
 
     #project-page {
-        height: auto;
+        height: 1;
+        position: fixed;
     }
 
     #placed-project {
@@ -210,19 +224,46 @@ section {
 
 @media screen and (max-width: 800px) {
 
+    html, body {
+        width: 100%;
+        min-height: 100%;
+        height: auto;
+    }
+
+    header {
+        padding: 20px 25px;
+    }
+
+    .wrapper {
+        padding: 0 10px 40px 10px;
+    }
+    
     main {
-        padding: 40px 15px;
+        padding: 15px 0 0;
+    }
+
+    #project-page p {
+        min-height: 100%;
+        text-align: center;  
+    }
+
+    #placed-project {
+        min-width: 100%;
+    }
+
+    .div-content {
+        min-width: 100%;
     }
 
     .grid-container {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 40px;        
     }
 
     .grid-container div img {
-        height: 185px;
-
+        height: auto;
+        width: 390px;
     }
 
     #close-button {
@@ -233,21 +274,38 @@ section {
 
 @media screen and (max-width: 400px) {
 
-    main {
-        padding: 50px 5px;
+    header {
+        padding: 15px 20px;
+    }
+
+    header a {
+        font-size: 18px;
     }
 
     h2 {
         font-size: 20px;
     }
 
+    .grid-container div img {
+        height: auto;
+        width: 100%;
+
+    }
+
     .grid-container div img:hover {
         transform: scale(1.02);
     }
 
-    .grid-container div img {
-        max-height: 135px;
+    #project-page h3 {
+        font-size: 25px;
+    }
 
+    #project-page p {
+        font-size: 22px;
+    }
+
+    #project-page a {
+        font-size: 22px;
     }
 
 }

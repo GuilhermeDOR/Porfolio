@@ -10,91 +10,203 @@ const secOne = document.querySelector('#sec-i-am');
 const secTwo = document.querySelector('#sec-my-skills');
 const secThree = document.querySelector('#sec-social-medias');
 
-secThree.style.display = 'none';
+const navLines = document.getElementById('menu-img');
+const navMask = document.querySelector('.menu-mask')
+const nav = document.querySelector('.nav-section');
+
+function openCloseNav() {
+
+    if (navMask.style.visibility === 'hidden') {
+        navMask.style.visibility = 'visible';
+        navMask.style.transition = '0.2s';
+        navMask.style.width = '100%';
+
+        setTimeout(() => {
+            nav.style.transition = '0.2s'
+            nav.style.transform = 'translateX(0)'
+        }, 300);
+
+    } else {
+        nav.style.transition = '0.2s'
+        nav.style.transform = 'translateX(-100%)'
+
+        setTimeout(() => {
+            navMask.style.visibility = 'hidden';
+            navMask.style.transition = '0.2s';
+            navMask.style.width = '0';
+        }, 300);
+    }
+}
+
+navLines.addEventListener('click', openCloseNav)
 
 function buttonSelected(event) {
     const clickedButton = event.target;
     const mainDiv = document.querySelector('main');
     const socialImg = document.querySelectorAll('.social-img');
+    if (window.matchMedia("(max-width: 866px) and (max-height: 932px)").matches) {
 
+        if (clickedButton === buttonOne) {
 
-    if (clickedButton === buttonOne) {
-
-        setTimeout(() => {
-            divDivs.forEach(secdiv => secdiv.style.display = 'none');
-            section.forEach(sec => sec.style.display = 'none');
-        }, 200);
-
-        setTimeout(() => {
-            mainDiv.style.height = '15%';
-        }, 150);
-
-        setTimeout(() => {
-            mainDiv.style.height = '100%';
-        }, 900);
-
-        setTimeout(() => {
-            secOne.style.display = 'inline-flex';
-        }, 1100);
-
-    }
-
-    if (clickedButton === buttonTwo) {
-
-        setTimeout(() => {
-            divDivs.forEach(secdiv => secdiv.style.display = 'none');
-            section.forEach(sec => sec.style.display = 'none');
-        }, 200);
-
-        setTimeout(() => {
-            mainDiv.style.height = '15%';
-        }, 150);
-
-        setTimeout(() => {
-            mainDiv.style.height = '100%';
-        }, 900);
-
-        setTimeout(() => {
-            secTwo.style.display = 'inline-flex';
-        }, 1100);
-
-    }
-
-    if (clickedButton === buttonThree) {
-
-        if (secThree.style.display === 'none') {
-            
             setTimeout(() => {
-                secThree.style.display = 'flex';
+                divDivs.forEach(secdiv => secdiv.style.display = 'none');
+                section.forEach(sec => sec.style.display = 'none');
+            }, 150);
+
+            setTimeout(() => {
+                mainDiv.style.minHeight = '5vh';
+            }, 250);
+
+            setTimeout(() => {
+                mainDiv.style.minHeight = '94.5vh';
+            }, 600);
+
+            setTimeout(() => {
+                secOne.style.display = 'flex';
+                window.scrollTo({ top: 0 });
+            }, 1000);
+
+        }
+
+        if (clickedButton === buttonTwo) {
+
+            setTimeout(() => {
+                divDivs.forEach(secdiv => secdiv.style.display = 'none');
+                section.forEach(sec => sec.style.display = 'none');
+            }, 150);
+
+            setTimeout(() => {
+                mainDiv.style.minHeight = '5vh';
+            }, 250);
+
+            setTimeout(() => {
+                mainDiv.style.minHeight = '94.5vh';
+            }, 600);
+
+            setTimeout(() => {
+                secTwo.style.display = 'flex';
+                window.scrollTo({ top: 0 });
+            }, 1000);
+
+        }
+
+        if (clickedButton === buttonThree) {
+
+            let computedStyle = window.getComputedStyle(secThree);
+
+            if (computedStyle.getPropertyValue('display') === 'none') {
+
+                setTimeout(() => {
+                    secThree.style.display = 'flex';
+                }, 200);
+
+                setTimeout(() => {
+                    secThree.style.height = 'auto';
+                }, 300);
+
+                setTimeout(() => {
+                    socialImg.forEach(img => img.style.height = '90%');
+                }, 350);
+
+
+            } else if (computedStyle.getPropertyValue('display') === 'flex') {
+
+                setTimeout(() => {
+                    socialImg.forEach(img => img.style.height = '0');
+                }, 200);
+
+                setTimeout(() => {
+                    secThree.style.height = '0';
+                }, 450);
+
+                setTimeout(() => {
+                    secThree.style.display = 'none';
+                }, 550);
+
+            }
+
+        }
+
+    } else {
+
+        if (clickedButton === buttonOne) {
+
+            setTimeout(() => {
+                divDivs.forEach(secdiv => secdiv.style.display = 'none');
+                section.forEach(sec => sec.style.display = 'none');
             }, 200);
 
             setTimeout(() => {
-                secThree.style.height = 'auto';
-            }, 300);
+                mainDiv.style.height = '15%';
+            }, 150);
 
             setTimeout(() => {
-               socialImg.forEach(img => img.style.height = '90%'); 
-            }, 350);
+                mainDiv.style.height = '90%';
+            }, 900);
 
+            setTimeout(() => {
+                secOne.style.display = 'flex';
+            }, 1100);
 
         }
-        if (secThree.style.display === 'flex') {
+
+        if (clickedButton === buttonTwo) {
 
             setTimeout(() => {
-               socialImg.forEach(img => img.style.height = '0'); 
+                divDivs.forEach(secdiv => secdiv.style.display = 'none');
+                section.forEach(sec => sec.style.display = 'none');
             }, 200);
 
             setTimeout(() => {
-                secThree.style.height = '0';
-            }, 450);
+                mainDiv.style.height = '15%';
+            }, 150);
 
             setTimeout(() => {
-                secThree.style.display = 'none';
-            }, 550);
-            
+                mainDiv.style.height = '90%';
+            }, 900);
+
+            setTimeout(() => {
+                secTwo.style.display = 'flex';
+            }, 1100);
+
+        }
+
+        if (clickedButton === buttonThree) {
+
+            let computedStyle = window.getComputedStyle(secThree);
+
+            if (computedStyle.getPropertyValue('display') === 'none') {
+
+                setTimeout(() => {
+                    secThree.style.display = 'flex';
+                }, 200);
+
+                setTimeout(() => {
+                    secThree.style.height = 'auto';
+                }, 300);
+
+                setTimeout(() => {
+                    socialImg.forEach(img => img.style.height = '90%');
+                }, 350);
+
+
+            } else if (computedStyle.getPropertyValue('display') === 'flex') {
+
+                setTimeout(() => {
+                    socialImg.forEach(img => img.style.height = '0');
+                }, 200);
+
+                setTimeout(() => {
+                    secThree.style.height = '0';
+                }, 450);
+
+                setTimeout(() => {
+                    secThree.style.display = 'none';
+                }, 550);
+
+            }
         }
     }
-
 }
 
 buttonOne.addEventListener('click', buttonSelected);

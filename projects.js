@@ -29,14 +29,14 @@ function openProject(event) {
 
         case 'wecare':
             projectImg.src = './img/printWeCare.png';
-            projectTittle.innerHTML = 'Desafio Um-CSS';
+            projectTittle.innerHTML = 'Desafio CSS - um';
             projectTxt.innerHTML = 'Este foi um dos primeiro projetos que fiz usando como foco a técnologia CSS, para aprendizado sobre ela.';
             projectLink.href = 'https://guilhermedor.github.io/Desafio-WeCare/';
             break;
 
         case 'energy':
             projectImg.src = './img/printEnergy.png';
-            projectTittle.innerHTML = 'Desafio Dois-CSS';
+            projectTittle.innerHTML = 'Desafio CSS - Dois';
             projectTxt.innerHTML = 'Este foi meu segundo projeto focado em CSS, para aprender mais sobre esta técnologia.';
             projectLink.href = 'https://guilhermedor.github.io/Desafio-Reward/';
             break;
