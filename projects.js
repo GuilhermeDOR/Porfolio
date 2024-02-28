@@ -13,11 +13,10 @@ function openProject(event) {
 
     switch (openedProject.id) {
         case 'starbucks':
-            console.log('carregado')
-            projectImg.src = './img/printStarbucks.png';
+            projectImg.src = './img/printStarbucks.jpg';
             projectTittle.innerHTML = 'Desafio Starbucks';
             projectTxt.innerHTML = 'Este foi meu primeiro projeto finalizado usando programação, e por mais simples que seja, apenas usando poucos elementos de html, css e javascript, me ajudou a ver o potencial do curso Devclub em me ensinar.';
-            projectLink.href = '';
+            projectLink.href = 'https://guilhermedor.github.io/Starbucks-Vid.Aula/';
             break;
 
         // case 'apresentacao':
@@ -28,21 +27,21 @@ function openProject(event) {
         //     break;
 
         case 'wecare':
-            projectImg.src = './img/printWeCare.png';
+            projectImg.src = './img/printWeCare.jpg';
             projectTittle.innerHTML = 'Desafio CSS - um';
             projectTxt.innerHTML = 'Este foi um dos primeiro projetos que fiz usando como foco a técnologia CSS, para aprendizado sobre ela.';
             projectLink.href = 'https://guilhermedor.github.io/Desafio-WeCare/';
             break;
 
         case 'energy':
-            projectImg.src = './img/printEnergy.png';
+            projectImg.src = './img/printEnergy.jpg';
             projectTittle.innerHTML = 'Desafio CSS - Dois';
             projectTxt.innerHTML = 'Este foi meu segundo projeto focado em CSS, para aprender mais sobre esta técnologia.';
             projectLink.href = 'https://guilhermedor.github.io/Desafio-Reward/';
             break;
 
         case 'mario':
-            projectImg.src = './img/MarioPrint.png';
+            projectImg.src = './img/printMario.jpg';
             projectTittle.innerHTML = 'Projeto Mario Brothers';
             projectTxt.innerHTML = 'Este foi um projeto um pouco mais trabalhado, e foi feito um uso maior de CSS e Javascript do que meus anteriores projetos.';
             projectLink.href = '';
@@ -56,13 +55,28 @@ function openProject(event) {
         //     break;
 
         case 'easyshopping':
-            projectImg.src = './img/printSiteMobile.png';
+            projectImg.src = './img/printSiteMobile.jpg';
             projectTittle.innerHTML = 'Desafio EasyShopping';
             projectTxt.innerHTML = 'Este projeto foi em especial para aprender sobre responsividade, logo após terminalo, fui desafiado e deixar mais responsivas as paginas do primeiro e segundo desafio CSS';
             projectLink.href = 'https://guilhermedor.github.io/Desafio-MobileShop/';
             break;
 
+        case 'converter':
+            projectImg.src = './img/printConversor.jpg';
+            projectTittle.innerHTML = 'Desafio Conversor de Moedas';
+            projectTxt.innerHTML = 'Neste projeto foi feito um simples conversor de moedas, nele ah mais a compreensão do sistema usado para os calculos da conversão, sem muitas informações em tempo real.';
+            projectLink.href = 'https://guilhermedor.github.io/Desafio-Conversor-de-Moedas/';
+            break;
+
+        case 'sorter':
+            projectImg.src = './img/printSorteador.jpg';
+            projectTittle.innerHTML = 'Desafio Sorteador';
+            projectTxt.innerHTML = 'Este aqui foi um projeto de um sorteador de número, entre um numero e outro';
+            projectLink.href = 'https://guilhermedor.github.io/Desafio-Sorteador/';
+            break;
+
         default:
+            alert('Projeto mal carregado')
             break;
 
     }
