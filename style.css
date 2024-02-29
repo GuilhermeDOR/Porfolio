@@ -15,10 +15,11 @@ body, html {
     align-items: center;
     padding: 40px 0 40px 0;
     width: 100%;
+    min-height: 100vh;
     height: 100%;
     border-left: 10px rgba(124, 118, 98, 0.486) solid;
     border-right: 10px rgba(124, 118, 98, 0.486) solid;
-    background-color: rgb(211, 199, 186);
+    background-color: rgb(226, 219, 211);
 }
 
 
@@ -115,9 +116,9 @@ main {
     padding: 30px 50px;
     width: 100%;
     height: 90%;
-    background-color: rgb(218, 206, 196);
-    border-top: 2px rgb(46, 22, 0) solid;
-    border-bottom: 2px rgb(46, 22, 0) solid;
+    background-color: rgb(237 233 229);
+    border-top:2px rgb(127 110 94) solid;
+    border-bottom:2px rgb(127 110 94) solid;
     border-radius: 50px;
     transition: 0.5s;
 
