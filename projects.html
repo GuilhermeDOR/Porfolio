@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="shortcut icon" href="./assets/favicon.ico" />
+    <link rel="shortcut icon" href="./assets/gorLogoV3.ico" />
     <link rel="stylesheet" href="projects.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,8 @@
 </head>
 
 <body>
-    
+
+    <img id="my-logo" src="./assets/gorLogoV3.jpg" alt="Minha-Logo">
 
     <div id="project-page">
         <img id="placed-project" src="" alt="ProjetoSelecionado">
@@ -38,20 +39,61 @@
             <section>
 
                 <div class="grid-container">
-                    <div class="project"><img id="mario" src="./img/printMario.jpg" alt="Projeto-Mario-Brothers"></div>
-                    <div class="project"><img id="starbucks" src="./img/printStarbucks.jpg" alt="Starbucks"></div>
-                    <!-- <div class="project"><img id="apresentacao" src="" alt="Html Apresentação" ></div> -->
-                    <div class="project"><img id="wecare" src="./img/printWeCare.jpg" alt="Projeto-We-Care"></div>
-                    <!-- <div class="project"><img id="energy" src="./img/printEnergy.jpg" alt="Projeto-Site-Recompensa"></div> -->
+                    <div class="project">
+                        <div class="project-board">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
+                        </div>
+                        <img id="mario" class="project-spoiler" src="./img/printMario.jpg" alt="Projeto-Mario-Brothers">
+                    </div>
+                    <div class="project">
+                        <div class="project-board">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
+                        </div>
+                        <img id="starbucks" class="project-spoiler" src="./img/printStarbucks.jpg" alt="Starbucks">
+                    </div>
+                    <div class="project">
+                        <div class="project-board">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
+                        </div>
+                        <img id="wecare" class="project-spoiler" src="./img/printWeCare.jpg" alt="Projeto-We-Care">
+                    </div>
+                    <div class="project">
+                        <div class="project-board">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
+                        </div>
+                        <img id="energy" class="project-spoiler" src="./img/printEnergy.jpg" alt="Projeto-Site-Recompensa">
+                    </div>
+                    <div class="project">
+                        <div class="project-board">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
+                        </div>
+                        <img id="easyshopping" class="project-spoiler" src="./img/printSiteMobile.jpg" alt="Projeto-Easy-Shopping">
+                    </div>
+                    <div class="project">
+                        <div class="project-board">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" />
+                        </div>
+                        <img id="converter" class="project-spoiler" src="./img/printConversor.jpg" alt="Projeto-Conversror-de-Moeda">
+                    </div>
+                    <!-- <div class="extra-project-"><img id="apresentacao" src="" alt="Html Apresentação" ></div> -->
                     <!-- <div class="project"><img id="unu" src="" alt="Discord Unu" ></div> -->
-                    <!-- <div class="project"><img id="easyshopping" src="./img/printSiteMobile.jpg" alt="Projeto-Easy-Shopping"></div>
-                    <div class="project"><img id="converter" src="./img/printConversor.jpg" alt="Projeto-Conversror-de-Moeda"></div>
-                    <div class="project"><img id="sorter" src="./img/printSorteador.jpg" alt="Projeto-Sorteador"></div> -->
+                    <!--<div class="project">
+                        <img id="sorter" class="project-spoiler" src="./img/printSorteador.jpg" alt="Projeto-Sorteador">
+                    </div> -->
                     <!-- <div class="project"><img id="" src="" alt="Vago"></div>
                     <div class="project"><img id="" src="" alt="Vago"></div>
                     <div class="project"><img id="" src="" alt="Vago"></div> -->
                 </div>
-
+                <div id="more-projects-div"><button id="more-projects-button">Load more</button></div>
             </section>
 
         </main>

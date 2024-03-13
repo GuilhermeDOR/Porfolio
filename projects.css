@@ -12,9 +12,23 @@ html, body {
 
 .wrapper {
     width: 100%;
+    min-height: 100vh;
     height: auto;
     background-color: rgb(226, 219, 211);
     padding: 0 10px 10px;
+}
+
+#my-logo {
+    position: fixed;
+    width: 72px;
+    right: 1%;
+    bottom: 1%;
+    border-radius: 100%;
+
+}
+
+#my-logo:hover {
+    opacity: 0.9;
 }
 
 header {
@@ -45,7 +59,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 30px 0;
     width: auto;
     height: auto;
 }
@@ -57,10 +71,10 @@ h2 {
     background-color: rgba(228, 207, 162, 0.829);
     border-bottom: 4px rgb(207, 189, 145) solid;
     border-radius: 15px;
-    color: #ffd903fb;
+    color: rgb(255, 255, 255);
     font-size: 35px;
     font-weight: 700;
-    text-shadow: 2px 2px 2px rgb(151, 104, 34);
+    text-shadow: 2px 2px 2px rgb(99, 88, 73);
 
 }
 
@@ -76,20 +90,47 @@ section {
     justify-items: center;
 }
 
-.grid-container div img {
+.project-spoiler {
+    display: flex;
     width: auto;
     height: 165px;
     cursor: pointer;
     border: 4px rgb(207, 189, 145) solid;
     border-radius: 10px;
     box-shadow: 0 0 5px rgb(109, 99, 74);
-    transition: 0.6s ease-in-out;
 }
 
-.grid-container div img:hover {
-    transform: scale(1.06);
+.project {
+    display: flex;
+    transition: 0.2s;
 }
 
+.project:hover {
+    transform: scale(0.97)
+}
+
+.project-board {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 3px;
+    width: 50px;
+    height: 165px;
+    align-items: center;   
+    border-top: 4px solid;
+    border-left: 4px solid;
+    border-bottom: 4px solid;
+    border-color: rgb(207, 189, 145);
+    border-right: 3px rgba(184, 173, 145, 0.7) solid;
+    border-radius: 10px 0 0 10px; 
+    background-color: rgba(184, 173, 145, 0.8);
+    pointer-events: none;
+}
+
+.project-tecnologies {
+    width: 40px;
+    
+}
 
 #project-page {
     z-index: 1;
@@ -102,20 +143,19 @@ section {
     width: 100%;
     height: 100vh;
     padding: 35px 20px;
-    background-color: rgba(0, 0, 0, 0.938);
+    background-color: rgba(194, 194, 194, 0.747);
 }
 
 #close-button {
+    max-width: 28px;
+    height: 154px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    background-color: rgb(112, 71, 71);
+    cursor: pointer;
     color: rgb(207, 207, 207);
     font-size: 20px;
     font-weight: 300;
-    margin-top: 10px;
-    max-width: 28px;
-    height: 150px;
-    border: none;
-    border-radius: 4px 0 0 4px;
-    background-color: rgb(175, 68, 68);
-    cursor: pointer;
     
 }
 
@@ -129,26 +169,24 @@ section {
     flex-direction: column;
     align-items: center;
     width: 85%;
-    margin-top: 10px;
-    background-color: rgba(255, 255, 255, 0.171);
+    background-color: rgba(2, 2, 2, 0.658);
     border: 1px white solid;
     border-radius: 4px;
 }
 
 #project-page h3 {
     text-align: center;
-    border-bottom: 2px white solid;
-    color: #fcb32cfb;
+    border-bottom: 1px white solid;
+    color: #f5e067;
     font-size: 30px;
     font-weight: 700;
-    text-shadow: 1px 1px 1px #a37c33fb;
 
 }
 
 #project-page p {
     max-width: 95%;
     margin: 10px 0;
-    color: rgb(206, 198, 174);
+    color: rgb(228, 218, 189);
     font-weight: 400;
     font-size: 25px;
     text-align: justify;
@@ -156,7 +194,7 @@ section {
 }
 
 #project-page a {
-    color: rgb(209, 173, 106);
+    color: rgb(202, 183, 148);
     font-size: 25px;
     font-weight: 700;
     text-decoration: none;
@@ -187,7 +225,25 @@ section {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 0;
     width: 65%;
+}
+
+#more-projects-div {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+#more-projects-button {
+    padding: 5px;
+    background-color: rgba(175, 173, 137, 0.384);
+    border: 2px rgb(161, 161, 142) solid;
+    border-radius: 3px;
+    font-size: 1em;
+    font-weight: 600;
+    color: rgb(63, 63, 63);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1070px) {
@@ -198,6 +254,10 @@ section {
         height: auto;
     }
 
+    #my-logo {
+        width: 62px;
+    }
+
     .wrapper {
         min-height: 100vh;
         height: 100%;
@@ -205,11 +265,6 @@ section {
 
     .div-content {
         width: 95%;
-    }
-
-    #project-page {
-        height: 1;
-        position: fixed;
     }
 
     #placed-project {
@@ -262,7 +317,7 @@ section {
         gap: 40px;        
     }
 
-    .grid-container div img {
+    .project-spoiler {
         height: auto;
         width: 390px;
     }
@@ -287,14 +342,10 @@ section {
         font-size: 20px;
     }
 
-    .grid-container div img {
+    .project-spoiler {
         height: auto;
         width: 100%;
 
-    }
-
-    .grid-container div img:hover {
-        transform: scale(1.02);
     }
 
     #project-page h3 {

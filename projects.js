@@ -43,7 +43,7 @@ function openProject(event) {
         case 'mario':
             projectImg.src = './img/printMario.jpg';
             projectTittle.innerHTML = 'Projeto Mario Brothers';
-            projectTxt.innerHTML = 'Este foi um projeto um pouco mais trabalhado, e foi feito um uso maior de CSS e Javascript do que meus anteriores projetos.';
+            projectTxt.innerHTML = 'Um pequeno projeto de Landing page, onde aprendi algumas técnicas muito úteis de posicionamento, sequencia de acontecimentos e posicionamento dos elementos na tela. E também algumas coisas sobre o que ter em uma pagina.';
             projectLink.href = '';
             break;
 

@@ -22,6 +22,13 @@ body, html {
     background-color: rgb(226, 219, 211);
 }
 
+#my-logo {
+    position: fixed;
+    width: 72px;
+    right: 2%;
+    bottom: 2%;
+    border-radius: 100%;
+}
 
 nav {
     display: flex;
@@ -262,6 +269,10 @@ section p {
         background-color: rgb(211, 199, 186);
     }
     
+    #my-logo {
+        width: 62px;
+    }
+
     .wrapper {
         padding:  20px 10px 15px;
         width: 100%;
