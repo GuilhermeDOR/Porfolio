@@ -24,6 +24,7 @@ html, body {
     right: 1%;
     bottom: 1%;
     border-radius: 100%;
+    z-index: 1;
 
 }
 
@@ -72,14 +73,10 @@ h2 {
     border-bottom: 4px rgb(207, 189, 145) solid;
     border-radius: 15px;
     color: rgb(255, 255, 255);
-    font-size: 35px;
+    font-size: 2em;
     font-weight: 700;
     text-shadow: 2px 2px 2px rgb(99, 88, 73);
 
-}
-
-section {
-    margin-bottom: 100px;
 }
 
 .grid-container {
@@ -90,9 +87,10 @@ section {
     justify-items: center;
 }
 
+
 .project-spoiler {
     display: flex;
-    width: auto;
+    min-width: 329.22px;
     height: 165px;
     cursor: pointer;
     border: 4px rgb(207, 189, 145) solid;
@@ -102,11 +100,20 @@ section {
 
 .project {
     display: flex;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .project:hover {
-    transform: scale(0.97)
+    transform: scale(0.97) !important
+}
+
+#grid-container-more-projects {
+    display: none;
+    margin: 40px 0 0;
+}
+
+.extra-project-visibility {
+    visibility: hidden;
 }
 
 .project-board {
@@ -114,7 +121,7 @@ section {
     display: grid;
     grid-template-columns: 1fr;
     padding: 3px;
-    width: 50px;
+    width: 3em;
     height: 165px;
     align-items: center;   
     border-top: 4px solid;
@@ -127,8 +134,8 @@ section {
     pointer-events: none;
 }
 
-.project-tecnologies {
-    width: 40px;
+.project-board img{
+    border-radius: 15%;
     
 }
 
@@ -143,7 +150,11 @@ section {
     width: 100%;
     height: 100vh;
     padding: 35px 20px;
-    background-color: rgba(194, 194, 194, 0.747);
+    background: rgb(91,91,91);
+    background: -moz-radial-gradient(circle, rgba(91,91,91,0.9037990196078431) 41%, rgba(163,163,163,0.9009978991596639) 90%);
+    background: -webkit-radial-gradient(circle, rgba(91,91,91,0.9037990196078431) 41%, rgba(163,163,163,0.9009978991596639) 90%);
+    background: radial-gradient(circle, rgba(91,91,91,0.9037990196078431) 41%, rgba(163,163,163,0.9009978991596639) 90%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5b5b5b",endColorstr="#a3a3a3",GradientType=1);
 }
 
 #close-button {
@@ -229,14 +240,14 @@ section {
     width: 65%;
 }
 
-#more-projects-div {
+#more-projects-button-div {
     display: flex;
     justify-content: center;
-    padding-top: 25px;
 }
 
 #more-projects-button {
     padding: 5px;
+    margin-top: 25px;
     background-color: rgba(175, 173, 137, 0.384);
     border: 2px rgb(161, 161, 142) solid;
     border-radius: 3px;
@@ -246,12 +257,17 @@ section {
     cursor: pointer;
 }
 
+
 @media screen and (max-width: 1070px) {
 
     html, body {
         width: 100%;
         min-height: 100vh;
         height: auto;
+    }
+
+    .project-board {
+        width: 3em;
     }
 
     #my-logo {
@@ -275,6 +291,10 @@ section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 50px;
+    }
+
+    #grid-container-more-projects {
+        margin: 50px 0;
     }
 }
 
@@ -303,6 +323,11 @@ section {
         text-align: center;  
     }
 
+    .project-board {
+        height: 193px;
+        width: 3em;
+    }
+
     #placed-project {
         min-width: 100%;
     }
@@ -317,9 +342,13 @@ section {
         gap: 40px;        
     }
 
+    #grid-container-more-projects {
+        margin: 40px 0;
+    }
+
     .project-spoiler {
-        height: auto;
-        width: 390px;
+        height: 193px;
+        min-width: 387.98px;
     }
 
     #close-button {
@@ -338,14 +367,15 @@ section {
         font-size: 18px;
     }
 
-    h2 {
-        font-size: 20px;
+    .project-spoiler {
+        height: 170px;
+        min-width: 341.19px; 
+
     }
 
-    .project-spoiler {
-        height: auto;
-        width: 100%;
-
+    .project-board {
+        width: 3em;
+        height: 170px;
     }
 
     #project-page h3 {

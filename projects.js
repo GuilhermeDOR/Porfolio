@@ -6,6 +6,7 @@ const projectTxt = document.getElementById('project-text');
 const projectLink = document.getElementById('project-link');
 const closeButton = document.getElementById('close-button');
 
+// função com switch case para identificar projeto e repassar informação a tela de projeto aberto
 function openProject(event) {
     const openedProject = event.target
 
@@ -80,13 +81,51 @@ function openProject(event) {
             break;
 
     }
-
 }
+allProjects.forEach(proj => proj.addEventListener('click', openProject));
 
+// função para fecha projeto aberto
 function close() {
     projectDiv.style.visibility = 'hidden';
-}
 
+}
 closeButton.addEventListener('click', close)
 
-allProjects.forEach(proj => proj.addEventListener('click', openProject));
+// TODA FUNCIONALIDADE DE MOSTRAR MAIS PROJETOS NA PAGINA
+
+const loadMoreButton = document.getElementById('more-projects-button');
+const extraProjectsGrid = document.getElementById('grid-container-more-projects');
+let projetosTemporario = []
+
+// pegar os projetos da div grid extra
+function collectExtraProjects() {
+
+    allProjects.forEach(project => {
+        if (project.parentNode === extraProjectsGrid) {
+            projetosTemporario.push(project)
+        }
+    })
+}
+
+// função para abrir mais projetos
+function loadMoreProjects() {
+
+    collectExtraProjects();
+    extraProjectsGrid.style.display = 'grid';
+    loadMoreButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    projetosTemporario.forEach(style => style.style.transform = 'scale(0.5)');
+    projetosTemporario.forEach((projeto, i) => {
+
+        setTimeout(() => {
+            projeto.style.visibility = 'visible';
+            projeto.style.transform = 'scale(1)';
+        }, 200 * i); // Atraso de 500ms multiplicado pelo índice
+    });
+    
+    projetosTemporario = []
+    loadMoreButton.style.pointerEvents = 'none';
+    loadMoreButton.innerHTML = 'Nada mais';
+};
+
+loadMoreButton.addEventListener('click', loadMoreProjects)

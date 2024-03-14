@@ -30,6 +30,10 @@ body, html {
     border-radius: 100%;
 }
 
+#my-logo:hover {
+    opacity: 0.9;
+}
+
 nav {
     display: flex;
     flex-direction: column;
