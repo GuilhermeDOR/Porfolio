@@ -4,7 +4,6 @@ const projectImg = document.getElementById('placed-project');
 const projectTittle = document.getElementById('project-tittle');
 const projectTxt = document.getElementById('project-text');
 const projectLink = document.getElementById('project-link');
-const closeButton = document.getElementById('close-button');
 
 // função com switch case para identificar projeto e repassar informação a tela de projeto aberto
 function openProject(event) {
@@ -16,28 +15,21 @@ function openProject(event) {
         case 'starbucks':
             projectImg.src = './img/printStarbucks.jpg';
             projectTittle.innerHTML = 'Desafio Starbucks';
-            projectTxt.innerHTML = 'Este foi meu primeiro projeto finalizado usando programação, e por mais simples que seja, apenas usando poucos elementos de html, css e javascript, me ajudou a ver o potencial do curso Devclub em me ensinar.';
+            projectTxt.innerHTML = 'Este foi meu primeiro projeto sobre programação. O fiz durante lives especiais no YouTube do canal Rodolfo Mori, que seria mais tarde meu professor ou sócio, como ele nos chama, em seu curso.';
             projectLink.href = 'https://guilhermedor.github.io/Starbucks-Vid.Aula/';
             break;
-
-        // case 'apresentacao':
-        //     projectImg.src = '';
-        //     projectTittle.innerHTML = 'Desafio Apresentação HTML';
-        //     projectTxt.innerHTML = '';
-        //     projectLink.href = '';
-        //     break;
 
         case 'wecare':
             projectImg.src = './img/printWeCare.jpg';
             projectTittle.innerHTML = 'Desafio CSS - um';
-            projectTxt.innerHTML = 'Este foi um dos primeiro projetos que fiz usando como foco a técnologia CSS, para aprendizado sobre ela.';
+            projectTxt.innerHTML = 'Este foi um dos primeiro projetos que fiz tendo como foco o aprendizado e uso da técnologia CSS.';
             projectLink.href = 'https://guilhermedor.github.io/Desafio-WeCare/';
             break;
 
         case 'energy':
             projectImg.src = './img/printEnergy.jpg';
             projectTittle.innerHTML = 'Desafio CSS - Dois';
-            projectTxt.innerHTML = 'Este foi meu segundo projeto focado em CSS, para aprender mais sobre esta técnologia.';
+            projectTxt.innerHTML = 'Este foi meu segundo projeto focado em aprender CSS, para conhecer mais sobre esta técnologia.';
             projectLink.href = 'https://guilhermedor.github.io/Desafio-Reward/';
             break;
 
@@ -48,36 +40,29 @@ function openProject(event) {
             projectLink.href = '';
             break;
 
-        // case 'unu':
-        //     projectImg.src = '';
-        //     projectTittle.innerHTML = 'Projeto Discord Unu';
-        //     projectTxt.innerHTML = '';
-        //     projectLink.href = '';
-        //     break;
-
         case 'easyshopping':
             projectImg.src = './img/printSiteMobile.jpg';
             projectTittle.innerHTML = 'Desafio EasyShopping';
-            projectTxt.innerHTML = 'Este projeto foi em especial para aprender sobre responsividade, logo após terminalo, fui desafiado e deixar mais responsivas as paginas do primeiro e segundo desafio CSS';
+            projectTxt.innerHTML = 'Este projeto foi em especial para aprender sobre responsividade de alguns elementos da página.';
             projectLink.href = 'https://guilhermedor.github.io/Desafio-MobileShop/';
             break;
 
         case 'converter':
             projectImg.src = './img/printConversor.jpg';
             projectTittle.innerHTML = 'Desafio Conversor de Moedas';
-            projectTxt.innerHTML = 'Neste projeto foi feito um simples conversor de moedas, nele ah mais a compreensão do sistema usado para os calculos da conversão, sem muitas informações em tempo real.';
+            projectTxt.innerHTML = 'Neste projeto foi feito um simples conversor de moedas, nele há mais a compreensão do sistema usado para os cálculos da conversão, sem informações em tempo real.';
             projectLink.href = 'https://guilhermedor.github.io/Desafio-Conversor-de-Moedas/';
             break;
 
         case 'sorter':
             projectImg.src = './img/printSorteador.jpg';
             projectTittle.innerHTML = 'Desafio Sorteador';
-            projectTxt.innerHTML = 'Este aqui foi um projeto de um sorteador de número, entre um numero e outro';
+            projectTxt.innerHTML = 'Um pequeno projeto de um sorteador de um número entre outros dois. Focado em entender e usar o math.random';
             projectLink.href = 'https://guilhermedor.github.io/Desafio-Sorteador/';
             break;
 
         default:
-            alert('Projeto mal carregado')
+            projectDiv.style.visibility = 'hidden';
             break;
 
     }
@@ -85,6 +70,7 @@ function openProject(event) {
 allProjects.forEach(proj => proj.addEventListener('click', openProject));
 
 // função para fecha projeto aberto
+const closeButton = document.getElementById('close-button');
 function close() {
     projectDiv.style.visibility = 'hidden';
 
@@ -120,7 +106,7 @@ function loadMoreProjects() {
         setTimeout(() => {
             projeto.style.visibility = 'visible';
             projeto.style.transform = 'scale(1)';
-        }, 200 * i); // Atraso de 500ms multiplicado pelo índice
+        }, 200 * i); // Atraso de 200ms multiplicado pelo índice
     });
     
     projetosTemporario = []

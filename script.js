@@ -16,7 +16,8 @@ const nav = document.querySelector('.nav-section');
 
 function openCloseNav() {
 
-    if (navMask.style.visibility === 'hidden') {
+    const computedWidth = window.getComputedStyle(navMask).getPropertyValue('width')
+    if (computedWidth === '0px') {
         navMask.style.visibility = 'visible';
         navMask.style.transition = '0.2s';
         navMask.style.width = '100%';
@@ -40,10 +41,12 @@ function openCloseNav() {
 
 navLines.addEventListener('click', openCloseNav)
 
+// ATIVAR FUNÇÕES DOS DOIS PRIMEIROS BOTÕES
+const socialImg = document.querySelectorAll('.social-img');
 function buttonSelected(event) {
     const clickedButton = event.target;
     const mainDiv = document.querySelector('main');
-    const socialImg = document.querySelectorAll('.social-img');
+
     if (window.matchMedia("(max-width: 866px) and (max-height: 932px)").matches) {
 
         if (clickedButton === buttonOne) {
@@ -58,14 +61,13 @@ function buttonSelected(event) {
             }, 250);
 
             setTimeout(() => {
-                mainDiv.style.minHeight = '94.5vh';
+                mainDiv.style.minHeight = '100vh';
             }, 600);
 
             setTimeout(() => {
                 secOne.style.display = 'flex';
                 window.scrollTo({ top: 0 });
             }, 1000);
-
         }
 
         if (clickedButton === buttonTwo) {
@@ -80,51 +82,13 @@ function buttonSelected(event) {
             }, 250);
 
             setTimeout(() => {
-                mainDiv.style.minHeight = '94.5vh';
+                mainDiv.style.minHeight = '100vh';
             }, 600);
 
             setTimeout(() => {
                 secTwo.style.display = 'flex';
                 window.scrollTo({ top: 0 });
             }, 1000);
-
-        }
-
-        if (clickedButton === buttonThree) {
-
-            let computedStyle = window.getComputedStyle(secThree);
-
-            if (computedStyle.getPropertyValue('display') === 'none') {
-
-                setTimeout(() => {
-                    secThree.style.display = 'flex';
-                }, 200);
-
-                setTimeout(() => {
-                    secThree.style.height = 'auto';
-                }, 300);
-
-                setTimeout(() => {
-                    socialImg.forEach(img => img.style.height = '90%');
-                }, 350);
-
-
-            } else if (computedStyle.getPropertyValue('display') === 'flex') {
-
-                setTimeout(() => {
-                    socialImg.forEach(img => img.style.height = '0');
-                }, 200);
-
-                setTimeout(() => {
-                    secThree.style.height = '0';
-                }, 450);
-
-                setTimeout(() => {
-                    secThree.style.display = 'none';
-                }, 550);
-
-            }
-
         }
 
     } else {
@@ -203,12 +167,47 @@ function buttonSelected(event) {
                 setTimeout(() => {
                     secThree.style.display = 'none';
                 }, 550);
-
             }
         }
     }
 }
 
+//ABRIR LINKS DE REDES SOCIAIS
+function openingSocial() {
+
+    let computedStyle = window.getComputedStyle(secThree);
+
+    if (computedStyle.getPropertyValue('visibility') === 'hidden') {
+
+        setTimeout(() => {
+            secThree.style.visibility = 'visible';
+        }, 200);
+
+        setTimeout(() => {
+            secThree.style.height = '25%';
+        }, 300);
+
+        setTimeout(() => {
+            socialImg.forEach(img => img.style.height = '90%');
+        }, 350);
+
+
+    } else if (computedStyle.getPropertyValue('visibility') === 'visible') {
+
+        setTimeout(() => {
+            socialImg.forEach(img => img.style.height = '0');
+        }, 200);
+
+        setTimeout(() => {
+            secThree.style.height = '0';
+        }, 450);
+
+        setTimeout(() => {
+            secThree.style.visibility = 'hidden';
+        }, 550);
+    }
+}
+
 buttonOne.addEventListener('click', buttonSelected);
 buttonTwo.addEventListener('click', buttonSelected);
-buttonThree.addEventListener('click', buttonSelected);
+buttonThree.addEventListener('click', openingSocial);
