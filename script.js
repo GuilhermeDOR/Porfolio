@@ -1,213 +1,144 @@
-const buttonOne = document.getElementById('b-one');
-const buttonTwo = document.getElementById('b-two');
-const buttonThree = document.getElementById('b-three');
+const allProjects = document.querySelectorAll('.project');
+const projectDiv = document.getElementById('project-page');
+const projectImg = document.getElementById('placed-project');
+const projectTittle = document.getElementById('project-tittle');
+const projectTxt = document.getElementById('project-text');
+const projectLink = document.getElementById('project-link');
 
-const divDivs = document.querySelectorAll('.div-divs')
+// função com switch case para identificar projeto e repassar informação a tela de projeto aberto
+function openProject(event) {
+    const openedProject = event.target
 
-const section = document.querySelectorAll('section');
-const secZero = document.querySelector('#sec-welcome');
-const secOne = document.querySelector('#sec-i-am');
-const secTwo = document.querySelector('#sec-my-skills');
-const secThree = document.querySelector('#sec-social-medias');
+    projectDiv.style.visibility = 'visible';
 
-const navLines = document.getElementById('menu-img');
-const navMask = document.querySelector('.menu-mask')
-const nav = document.querySelector('.nav-section');
+    switch (openedProject.id) {
+        case 'starbucks':
+            projectImg.src = './img/printStarbucks.jpg';
+            projectTittle.innerHTML = 'Desafio Starbucks';
+            projectTxt.innerHTML = 'Este foi meu primeiro projeto sobre programação. O fiz durante lives especiais no YouTube do canal Rodolfo Mori, que seria mais tarde meu professor ou sócio, como ele nos chama, em seu curso.';
+            projectLink.href = 'https://guilhermedor.github.io/Starbucks-Vid.Aula/';
+            break;
 
-function openCloseNav() {
+        case 'wecare':
+            projectImg.src = './img/printWeCare.jpg';
+            projectTittle.innerHTML = 'Desafio CSS - um';
+            projectTxt.innerHTML = 'Este foi um dos primeiro projetos que fiz tendo como foco o aprendizado e uso da técnologia CSS.';
+            projectLink.href = 'https://guilhermedor.github.io/Desafio-WeCare/';
+            break;
 
-    const computedWidth = window.getComputedStyle(navMask).getPropertyValue('width')
-    if (computedWidth === '0px') {
-        navMask.style.visibility = 'visible';
-        navMask.style.transition = '0.2s';
-        navMask.style.width = '100%';
+        case 'energy':
+            projectImg.src = './img/printEnergy.jpg';
+            projectTittle.innerHTML = 'Desafio CSS - Dois';
+            projectTxt.innerHTML = 'Este foi meu segundo projeto focado em aprender CSS, para conhecer mais sobre esta técnologia.';
+            projectLink.href = 'https://guilhermedor.github.io/Desafio-Reward/';
+            break;
+
+        case 'mario':
+            projectImg.src = './img/printMario.jpg';
+            projectTittle.innerHTML = 'Projeto Mario Brothers';
+            projectTxt.innerHTML = 'Um pequeno projeto de Landing page, onde aprendi algumas técnicas muito úteis de posicionamento, sequencia de acontecimentos e posicionamento dos elementos na tela. E também algumas coisas sobre o que ter em uma pagina.';
+            projectLink.href = 'https://guilhermedor.github.io/Projeto-Mario-Brothers/';
+            break;
+
+        case 'easyshopping':
+            projectImg.src = './img/printSiteMobile.jpg';
+            projectTittle.innerHTML = 'Desafio EasyShopping';
+            projectTxt.innerHTML = 'Este projeto foi em especial para aprender sobre responsividade de alguns elementos da página.';
+            projectLink.href = 'https://guilhermedor.github.io/Desafio-MobileShop/';
+            break;
+
+        case 'converter':
+            projectImg.src = './img/printConversor.jpg';
+            projectTittle.innerHTML = 'Desafio Conversor de Moedas';
+            projectTxt.innerHTML = 'Neste projeto foi feito um simples conversor de moedas, nele há mais a compreensão do sistema usado para os cálculos da conversão, sem informações em tempo real.';
+            projectLink.href = 'https://guilhermedor.github.io/Desafio-Conversor-de-Moedas/';
+            break;
+
+        case 'sorter':
+            projectImg.src = './img/printSorteador.jpg';
+            projectTittle.innerHTML = 'Desafio Sorteador';
+            projectTxt.innerHTML = 'Um pequeno projeto de um sorteador de um número entre outros dois. Focado em entender e usar o math.random';
+            projectLink.href = 'https://guilhermedor.github.io/Desafio-Sorteador/';
+            break;
+
+        default:
+            projectDiv.style.visibility = 'hidden';
+            break;
+
+    }
+}
+allProjects.forEach(proj => proj.addEventListener('click', openProject));
+
+// função para fechar projeto aberto
+const closeButton = document.getElementById('close-button');
+function closing() {
+    projectDiv.style.visibility = 'hidden';
+
+}
+closeButton.addEventListener('click', closing)
+
+// TODA FUNCIONALIDADE DE MOSTRAR MAIS PROJETOS NA PAGINA
+
+const loadMoreButton = document.getElementById('more-projects-button');
+const extraProjectsGrid = document.getElementById('grid-container-more-projects');
+let projetosTemporario = []
+
+// pegar os projetos da div grid extra
+function collectExtraProjects() {
+
+    allProjects.forEach(project => {
+        if (project.parentNode === extraProjectsGrid) {
+            projetosTemporario.push(project)
+        }
+    })
+}
+
+// função para abrir mais projetos
+function loadMoreProjects() {
+
+    collectExtraProjects();
+    extraProjectsGrid.style.display = 'grid';
+    loadMoreButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    projetosTemporario.forEach(style => style.style.transform = 'scale(0.5)');
+    projetosTemporario.forEach((projeto, i) => {
 
         setTimeout(() => {
-            nav.style.transition = '0.2s'
-            nav.style.transform = 'translateX(0)'
-        }, 300);
+            projeto.style.visibility = 'visible';
+            projeto.style.transform = 'scale(1)';
+        }, 200 * i); // Atraso de 200ms multiplicado pelo índice
+    });
+    
+    projetosTemporario = []
+    loadMoreButton.style.pointerEvents = 'none';
+    loadMoreButton.innerHTML = 'Nada mais';
+};
 
+loadMoreButton.addEventListener('click', loadMoreProjects)
+
+// Expandir medias sociais com clique na logo
+
+const myLogo = document.getElementById('my-logo')
+const socialBg = document.querySelector('.sec-social-medias')
+const linkedInImg = document.querySelector('.linkedin')
+const gitHubImg = document.querySelector('.github')
+
+function expandSocialMedias() {
+    const socialBgOpac = window.getComputedStyle(myLogo).getPropertyValue('opacity')
+
+    if (socialBgOpac < 1) {
+            myLogo.style.opacity = '1';
+            socialBg.style.height = '185px';
+            linkedInImg.style.transform = 'translateY(-140%)';
+            gitHubImg.style.transform = 'translateY(-260%)'; 
+            linkedInImg.style.opacity = '1';
+            gitHubImg.style.opacity = '1';           
     } else {
-        nav.style.transition = '0.2s'
-        nav.style.transform = 'translateX(-100%)'
-
-        setTimeout(() => {
-            navMask.style.visibility = 'hidden';
-            navMask.style.transition = '0.2s';
-            navMask.style.width = '0';
-        }, 300);
-    }
+            gitHubImg.style.opacity = '0';
+            linkedInImg.style.opacity = '0';
+            gitHubImg.style.transform = 'translateY(0)';
+            linkedInImg.style.transform = 'translateY(0)';
+            myLogo.style.opacity = '0.5';
+            socialBg.style.height = '64px';
+    } 
 }
-
-navLines.addEventListener('click', openCloseNav)
-
-// ATIVAR FUNÇÕES DOS DOIS PRIMEIROS BOTÕES
-const socialImg = document.querySelectorAll('.social-img');
-function buttonSelected(event) {
-    const clickedButton = event.target;
-    const mainDiv = document.querySelector('main');
-
-    if (window.matchMedia("(max-width: 866px) and (max-height: 932px)").matches) {
-
-        if (clickedButton === buttonOne) {
-
-            setTimeout(() => {
-                divDivs.forEach(secdiv => secdiv.style.display = 'none');
-                section.forEach(sec => sec.style.display = 'none');
-            }, 150);
-
-            setTimeout(() => {
-                mainDiv.style.minHeight = '5vh';
-            }, 250);
-
-            setTimeout(() => {
-                mainDiv.style.minHeight = '100vh';
-            }, 600);
-
-            setTimeout(() => {
-                secOne.style.display = 'flex';
-                window.scrollTo({ top: 0 });
-            }, 1000);
-        }
-
-        if (clickedButton === buttonTwo) {
-
-            setTimeout(() => {
-                divDivs.forEach(secdiv => secdiv.style.display = 'none');
-                section.forEach(sec => sec.style.display = 'none');
-            }, 150);
-
-            setTimeout(() => {
-                mainDiv.style.minHeight = '5vh';
-            }, 250);
-
-            setTimeout(() => {
-                mainDiv.style.minHeight = '100vh';
-            }, 600);
-
-            setTimeout(() => {
-                secTwo.style.display = 'flex';
-                window.scrollTo({ top: 0 });
-            }, 1000);
-        }
-
-    } else {
-
-        if (clickedButton === buttonOne) {
-
-            setTimeout(() => {
-                divDivs.forEach(secdiv => secdiv.style.display = 'none');
-                section.forEach(sec => sec.style.display = 'none');
-            }, 200);
-
-            setTimeout(() => {
-                mainDiv.style.height = '15%';
-            }, 150);
-
-            setTimeout(() => {
-                mainDiv.style.height = '90%';
-            }, 900);
-
-            setTimeout(() => {
-                secOne.style.display = 'flex';
-            }, 1100);
-
-        }
-
-        if (clickedButton === buttonTwo) {
-
-            setTimeout(() => {
-                divDivs.forEach(secdiv => secdiv.style.display = 'none');
-                section.forEach(sec => sec.style.display = 'none');
-            }, 200);
-
-            setTimeout(() => {
-                mainDiv.style.height = '15%';
-            }, 150);
-
-            setTimeout(() => {
-                mainDiv.style.height = '90%';
-            }, 900);
-
-            setTimeout(() => {
-                secTwo.style.display = 'flex';
-            }, 1100);
-
-        }
-
-        if (clickedButton === buttonThree) {
-
-            let computedStyle = window.getComputedStyle(secThree);
-
-            if (computedStyle.getPropertyValue('display') === 'none') {
-
-                setTimeout(() => {
-                    secThree.style.display = 'flex';
-                }, 200);
-
-                setTimeout(() => {
-                    secThree.style.height = 'auto';
-                }, 300);
-
-                setTimeout(() => {
-                    socialImg.forEach(img => img.style.height = '90%');
-                }, 350);
-
-
-            } else if (computedStyle.getPropertyValue('display') === 'flex') {
-
-                setTimeout(() => {
-                    socialImg.forEach(img => img.style.height = '0');
-                }, 200);
-
-                setTimeout(() => {
-                    secThree.style.height = '0';
-                }, 450);
-
-                setTimeout(() => {
-                    secThree.style.display = 'none';
-                }, 550);
-            }
-        }
-    }
-}
-
-//ABRIR LINKS DE REDES SOCIAIS
-function openingSocial() {
-
-    let computedStyle = window.getComputedStyle(secThree);
-
-    if (computedStyle.getPropertyValue('visibility') === 'hidden') {
-
-        setTimeout(() => {
-            secThree.style.visibility = 'visible';
-        }, 200);
-
-        setTimeout(() => {
-            secThree.style.height = '25%';
-        }, 300);
-
-        setTimeout(() => {
-            socialImg.forEach(img => img.style.height = '90%');
-        }, 350);
-
-
-    } else if (computedStyle.getPropertyValue('visibility') === 'visible') {
-
-        setTimeout(() => {
-            socialImg.forEach(img => img.style.height = '0');
-        }, 200);
-
-        setTimeout(() => {
-            secThree.style.height = '0';
-        }, 450);
-
-        setTimeout(() => {
-            secThree.style.visibility = 'hidden';
-        }, 550);
-    }
-}
-
-buttonOne.addEventListener('click', buttonSelected);
-buttonTwo.addEventListener('click', buttonSelected);
-buttonThree.addEventListener('click', openingSocial);

@@ -1,134 +1,245 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio</title>
+    <link rel="shortcut icon" href="./assets/gorLogoV3.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conheça-me</title>
-    <link rel="shortcut icon" href="./assets/gorLogoV3.ico"/>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-
-    <img id="my-logo" src="./assets/gorLogoV3.jpg" alt="Minha-Logo">
-
-    <div class="wrapper">
-
-        <div>
-            <img id="menu-img" src="./assets/menu.png" alt="MENU">
-            <div class="menu-mask"></div>
-        </div>
-
-        <nav class="nav-section">
-
-            <div class="button-list">
-
-                <button class="buttons" id="b-one">Quem sou</button>
-                <button class="buttons" id="b-two">O que sei e de onde</button>
-                <button class="buttons" id="b-three">Meus Perfis</button>
-
-            </div>
-
-            <div id="sec-social-medias">
-
-                <a href="https://github.com/GuilhermeDOR"><img
-                        src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
-                        alt="Github" class="social-img"></a>
-                <a href="https://www.linkedin.com/feed/"><img
-                        src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"
-                        alt="Linkedin" class="social-img"></a>
-                <a href="https://www.instagram.com/gui.o.r/"><img
-                        src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"
-                        alt="Instagram" class="social-img"></a>
-
-            </div>
-
-            <div class="links">
-
-                <a href="projects.html">Meus Projetos</a>
-
-            </div>
-
-        </nav>
-
-        <main>
-
-            <section class="sec-welcome">
-
-                <p>Olá, esta é uma página de apresentação onde você descobrirá quem é <b>Guilherme</b>, e oque faz.
-                </p>
-                <img src="./assets/welcome_logo.png" alt="">
-
-            </section>
-
-            <section id="sec-i-am" class="div-divs">
-
-                <div>
-                    <h2>Olá me chamo Guilherme de Oliveira Rodrigues</h2>
-                    <br>
-                    <p>Tenho 19 anos e venho de Lajeado–RS. Sou alguém muito respeitoso com regras e como algo deve ser
-                        feitas. Porém, infelizmente não tenho experiência no mercado de trabalho, mas creio conseguir
-                        trabalhar bem em equipe. Embora eu prefira agir sozinho enquanto faço algo, gosto de saber as
-                        opiniões e ideias de outros</p>
-                    <br>
-                    <p>Com o passar dos anos, eu já me vi tentado a entrar em algumas áreas como, fazer jogos,
-                        carpintaria, designs com canva, modelagem 3d com blender. Mas com a programação, tudo mudou,
-                        agora eu posso usar toda minha criatividade e vontade para desenvolver ideias e necessidades,
-                        com o único limite sendo minha vontade de aprender mais.</p>
-                </div>
-                <img src="./assets/guilhermefoto.jpg" alt="">
-
-            </section>
-
-            <section id="sec-my-skills" class="div-divs">
-
-                <h2>Atualmente estou aprendendo e utilizando:</h2>
-                <div>
-                    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"
-                        alt="JavaScript-logo">
-                    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
-                        alt="HTML-logo">
-                    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
-                        alt="CSS-logo">
-                </div>
-                <br>
-
-                <h2>Também irei aprender a usar:</h2>
-                <div>
-                    <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"
-                        alt="Postgre-logo">
-                    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"
-                        alt="Typescript-logo">
-                    <img src="https://img.shields.io/badge/sequelize-323330?style=for-the-badge&logo=sequelize&logoColor=blue"
-                        alt="sequelize-logo">
-                    <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"
-                        alt="Monglob-logo">
-                    <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white"
-                        alt="Node-logo">
-                    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"
-                        alt="React-logo">
-                </div>
-
-                <br>
-
-                <p>Antes de 2024, já tive algumas curtas experiências com programação, mas nada muito a fundo. Agora em
-                    2024 estou cursando o DevClub, por hora em Front-end mas como futuro Fullstack, e estou com um
-                    progresso de aprendizado muito maior que antes.</p>
-
-            </section>
-
-        </main>
-
+  <body>
+    <div class="sec-social-medias">
+      <img
+        id="my-logo"
+        src="./assets/gorLogoV3.jpg"
+        alt="Minha-Logo"
+        onclick="expandSocialMedias()"
+      />
+      <a href="https://github.com/GuilhermeDOR"
+        ><img
+          src="./assets/github-original.svg"
+          alt="Github"
+          class="social-img github"
+      /></a>
+      <a href="https://www.linkedin.com/feed/"
+        ><img
+          src="./assets/linkedin-original.svg"
+          alt="Linkedin"
+          class="social-img linkedin"
+      /></a>
     </div>
 
-</body>
+    <div id="project-page">
+      <img id="placed-project" src="" alt="ProjetoSelecionado" />
 
-<script src="script.js"></script>
+      <div class="div-content">
+        <button id="close-button">F E C H A R</button>
 
+        <div class="content">
+          <h3 id="project-tittle"></h3>
+          <p id="project-text"></p>
+          <a id="project-link" href="" target="_blank">ACESSAR</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <!-- <header>
+        <a href="index.html">Voltar</a>
+      </header> -->
+      <main>
+        <div class="section-mains section-top">
+          <div class="sec-top-first-div">
+            <div>
+              <h1>Portfólio de Guilherme</h1>
+              <p>
+                Olá, me chamo Guilherme de Oliveira Rodrigues, e gostaria de
+                apresentar-lhes alguns dos projetos que já desenvolvi.
+              </p>
+              <p>Dê uma olhada em meus <button>Projetos</button></p>
+            </div>
+            <img class="foto" src="./assets/guilhermefoto.jpg" alt="" />
+          </div>
+        </div>
+
+        <div class="section-mains section-bottom">
+          <h2>Portfólio</h2>
+
+          <section>
+            <div class="grid-container">
+              <div class="project">
+                <div class="project-board">
+                  <img src="./assets/css3-original-wordmark.svg" />
+                  <img src="./assets/javascript-original.svg" />
+                  <img src="./assets/html5-original-wordmark.svg" />
+                </div>
+                <img
+                  id="mario"
+                  class="project-spoiler"
+                  src="./img/printMario.jpg"
+                  alt="Projeto-Mario-Brothers"
+                />
+              </div>
+              <div class="project">
+                <div class="project-board">
+                  <img src="./assets/css3-original-wordmark.svg" />
+                  <img src="./assets/javascript-original.svg" />
+                  <img src="./assets/html5-original-wordmark.svg" />
+                </div>
+                <img
+                  id="starbucks"
+                  class="project-spoiler"
+                  src="./img/printStarbucks.jpg"
+                  alt="Starbucks"
+                />
+              </div>
+              <div class="project">
+                <div class="project-board">
+                  <img src="./assets/css3-original-wordmark.svg" />
+                  <img src="./assets/html5-original-wordmark.svg" />
+                </div>
+                <img
+                  id="wecare"
+                  class="project-spoiler"
+                  src="./img/printWeCare.jpg"
+                  alt="Projeto-We-Care"
+                />
+              </div>
+              <div class="project">
+                <div class="project-board">
+                  <img src="./assets/css3-original-wordmark.svg" />
+                  <img src="./assets/html5-original-wordmark.svg" />
+                </div>
+                <img
+                  id="energy"
+                  class="project-spoiler"
+                  src="./img/printEnergy.jpg"
+                  alt="Projeto-Site-Recompensa"
+                />
+              </div>
+              <div class="project">
+                <div class="project-board">
+                  <img src="./assets/css3-original-wordmark.svg" />
+                  <img src="./assets/html5-original-wordmark.svg" />
+                </div>
+                <img
+                  id="easyshopping"
+                  class="project-spoiler"
+                  src="./img/printSiteMobile.jpg"
+                  alt="Projeto-Easy-Shopping"
+                />
+              </div>
+              <div class="project">
+                <div class="project-board">
+                  <img src="./assets/javascript-original.svg" />
+                  <img src="./assets/html5-original-wordmark.svg" />
+                  <img src="./assets/css3-original-wordmark.svg" />
+                </div>
+                <img
+                  id="converter"
+                  class="project-spoiler"
+                  src="./img/printConversor.jpg"
+                  alt="Projeto-Conversror-de-Moeda"
+                />
+              </div>
+            </div>
+
+            <div class="grid-container" id="grid-container-more-projects">
+              <div class="project extra-project-visibility">
+                <div class="project-board">
+                  <img src="./assets/javascript-original.svg" />
+                  <img src="./assets/html5-original-wordmark.svg" />
+                  <img src="./assets/css3-original-wordmark.svg" />
+                </div>
+                <img
+                  id="sorter"
+                  class="project-spoiler"
+                  src="./img/printSorteador.jpg"
+                  alt="Projeto-Sorteador"
+                />
+              </div>
+              <div class="project extra-project-visibility">
+                <div class="project-board">
+                  <img src="" />
+                  <img src="" />
+                  <img src="" />
+                </div>
+                <img
+                  id="apresentacao"
+                  class="project-spoiler"
+                  src="./img/fundoProjetoFuturo.jpg"
+                  alt="Html Apresentação"
+                />
+              </div>
+              <div class="project extra-project-visibility">
+                <div class="project-board">
+                  <img src="" />
+                  <img src="" />
+                  <img src="" />
+                </div>
+                <img
+                  id="unu"
+                  class="project-spoiler"
+                  src="./img/fundoProjetoFuturo.jpg"
+                  alt="Discord Unu"
+                />
+              </div>
+              <div class="project extra-project-visibility">
+                <div class="project-board">
+                  <img src="" />
+                  <img src="" />
+                  <img src="" />
+                </div>
+                <img
+                  id=""
+                  class="project-spoiler"
+                  src="./img/fundoProjetoFuturo.jpg"
+                  alt="Vago"
+                />
+              </div>
+              <div class="project extra-project-visibility">
+                <div class="project-board">
+                  <img src="" />
+                  <img src="" />
+                  <img src="" />
+                </div>
+                <img
+                  id=""
+                  class="project-spoiler"
+                  src="./img/fundoProjetoFuturo.jpg"
+                  alt="Vago"
+                />
+              </div>
+              <div class="project extra-project-visibility">
+                <div class="project-board">
+                  <img src="" />
+                  <img src="" />
+                  <img src="" />
+                </div>
+                <img
+                  id=""
+                  class="project-spoiler"
+                  src="./img/fundoProjetoFuturo.jpg"
+                  alt="Vago"
+                />
+              </div>
+            </div>
+
+            <div id="more-projects-button-div">
+              <button id="more-projects-button">Load more</button>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+
+  <script src="script.js"></script>
 </html>
