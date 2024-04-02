@@ -57,7 +57,7 @@ a {
 
 .section-top {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 
   background: rgb(212, 201, 190);
   background: -moz-linear-gradient(
@@ -93,6 +93,7 @@ a {
 }
 
 .sec-top-first-div h1 {
+  text-align: center;
 }
 
 .sec-top-first-div p {
@@ -401,8 +402,32 @@ h2 {
     height: auto;
   }
 
-  header {
-    padding: 20px 25px;
+  .sec-top-first-div {
+    flex-direction: column;
+  }
+
+  .section-top div {
+    padding-bottom: 25px;
+    gap: 25px;
+  }
+
+  .section-top h1 {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  .section-top p {
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.1em;
+  }
+
+  .section-top button {
+    font-size: 1em;
+  }
+
+  .foto {
+    width: 65%;
   }
 
   .section-mains {
@@ -449,14 +474,6 @@ h2 {
 }
 
 @media screen and (max-width: 400px) {
-  header {
-    padding: 15px 20px;
-  }
-
-  header a {
-    font-size: 18px;
-  }
-
   .project-spoiler {
     height: 150px;
     min-width: 315px;

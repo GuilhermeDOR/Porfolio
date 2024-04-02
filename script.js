@@ -71,12 +71,12 @@ allProjects.forEach(proj => proj.addEventListener('click', openProject));
 
 // função para fechar projeto aberto
 const closeButton = document.getElementById('close-button');
-function closing() {
+
+closeButton.addEventListener('click', () => {
     projectDiv.style.visibility = 'hidden';
+})
 
-}
-closeButton.addEventListener('click', closing)
-
+//
 // TODA FUNCIONALIDADE DE MOSTRAR MAIS PROJETOS NA PAGINA
 
 const loadMoreButton = document.getElementById('more-projects-button');
@@ -98,7 +98,11 @@ function loadMoreProjects() {
 
     collectExtraProjects();
     extraProjectsGrid.style.display = 'grid';
-    loadMoreButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    //scroll({ top: window.innerHeight * 2, behavior: 'smooth'});
+    scroll({ top: window.scrollY + window.innerHeight, behavior: 'smooth' });
+
+
+    //loadMoreButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     projetosTemporario.forEach(style => style.style.transform = 'scale(0.5)');
     projetosTemporario.forEach((projeto, i) => {
@@ -142,3 +146,11 @@ function expandSocialMedias() {
             socialBg.style.height = '64px';
     } 
 }
+
+//
+// Rola a página para baixo até os projetos
+const projectosButton = document.querySelector('.button-slide-to-proj');
+
+projectosButton.addEventListener('click', () => {
+    scroll({ top: window.innerHeight, behavior: 'smooth'});
+})
