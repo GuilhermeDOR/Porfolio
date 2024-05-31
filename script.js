@@ -5,6 +5,50 @@ const projectTittle = document.getElementById('project-tittle');
 const projectTxt = document.getElementById('project-text');
 const projectLink = document.getElementById('project-link');
 
+//
+// TODA FUNCIONALIDADE DE MOSTRAR MAIS PROJETOS NA PAGINA
+const loadMoreButton = document.getElementById('more-projects-button');
+const extraProjectsGrid = document.getElementById('grid-container-more-projects');
+
+//
+// Função alterada para novo modelo de abertura de projetos extras
+//
+const projectsToAppear = [
+    { src: './img/printWeCare.jpg', id: 'wecare', alt: 'Projeto-We-Care' },
+    { src: './img/printEnergy.jpg', id: 'energy', alt: 'Projeto-Site-Recompensas' },
+    { src: './img/printSiteMobile.jpg', id: 'easyshopping', alt: 'Projeto-Easy-Shopping' },
+    { src: './img/fundoProjetoFuturo.jpg', id: '', alt: '' },
+    { src: './img/fundoProjetoFuturo.jpg', id: '', alt: '' },
+]
+
+// função para abrir mais projetos
+let myProjects = ''
+function loadMoreProjects(array) {
+    myProjects = '';
+
+    array.forEach(projeto => {
+        myProjects += `
+            <div class="project">
+                <img 
+                    id="${projeto.id}" 
+                    class="project-spoiler" 
+                    src="${projeto.src}" 
+                    alt="${projeto.alt}" 
+                />
+            </div>
+        `;
+    })
+    extraProjectsGrid.innerHTML = myProjects;
+    extraProjectsGrid.style.display = 'grid';
+
+    // Reinicializa os event listeners para os novos projetos
+    const newProjects = extraProjectsGrid.querySelectorAll('.project');
+    newProjects.forEach(proj => proj.addEventListener('click', openProject));
+
+}
+loadMoreButton.addEventListener('click', () => loadMoreProjects(projectsToAppear))
+
+//
 // função com switch case para identificar projeto e repassar informação a tela de projeto aberto
 function openProject(event) {
     const openedProject = event.target
@@ -64,87 +108,30 @@ function openProject(event) {
         default:
             projectDiv.style.visibility = 'hidden';
             break;
-
     }
 }
 allProjects.forEach(proj => proj.addEventListener('click', openProject));
 
+//
 // função para fechar projeto aberto
 const closeButton = document.getElementById('close-button');
-
-closeButton.addEventListener('click', () => {
+function closing() {
     projectDiv.style.visibility = 'hidden';
-})
+    projectImg.src = '';
+    projectTittle.innerHTML = '';
+    projectTxt.innerHTML = '';
+    projectLink.href = '';
+}
+closeButton.addEventListener('click', closing)
 
 //
-// TODA FUNCIONALIDADE DE MOSTRAR MAIS PROJETOS NA PAGINA
-
-const loadMoreButton = document.getElementById('more-projects-button');
-const extraProjectsGrid = document.getElementById('grid-container-more-projects');
-let projetosTemporario = []
-
-// pegar os projetos da div grid extra
-function collectExtraProjects() {
-
-    allProjects.forEach(project => {
-        if (project.parentNode === extraProjectsGrid) {
-            projetosTemporario.push(project)
-        }
-    })
-}
-
-// função para abrir mais projetos
-function loadMoreProjects() {
-
-    collectExtraProjects();
-    extraProjectsGrid.style.display = 'grid';
-    //scroll({ top: window.innerHeight * 2, behavior: 'smooth'});
-    scroll({ top: window.scrollY + window.innerHeight, behavior: 'smooth' });
-
-
-    //loadMoreButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    projetosTemporario.forEach(style => style.style.transform = 'scale(0.5)');
-    projetosTemporario.forEach((projeto, i) => {
-
-        setTimeout(() => {
-            projeto.style.visibility = 'visible';
-            projeto.style.transform = 'scale(1)';
-        }, 200 * i); // Atraso de 200ms multiplicado pelo índice
-    });
-    
-    projetosTemporario = []
-    loadMoreButton.style.pointerEvents = 'none';
-    loadMoreButton.innerHTML = 'Nada mais';
-};
-
-loadMoreButton.addEventListener('click', loadMoreProjects)
-
 // Expandir medias sociais com clique na logo
-
 const myLogo = document.getElementById('my-logo')
 const socialBg = document.querySelector('.sec-social-medias')
-const linkedInImg = document.querySelector('.linkedin')
-const gitHubImg = document.querySelector('.github')
 
 function expandSocialMedias() {
-    const socialBgOpac = window.getComputedStyle(myLogo).getPropertyValue('opacity')
-
-    if (socialBgOpac < 1) {
-            myLogo.style.opacity = '1';
-            socialBg.style.height = '185px';
-            linkedInImg.style.transform = 'translateY(-140%)';
-            gitHubImg.style.transform = 'translateY(-260%)'; 
-            linkedInImg.style.opacity = '1';
-            gitHubImg.style.opacity = '1';           
-    } else {
-            gitHubImg.style.opacity = '0';
-            linkedInImg.style.opacity = '0';
-            gitHubImg.style.transform = 'translateY(0)';
-            linkedInImg.style.transform = 'translateY(0)';
-            myLogo.style.opacity = '0.5';
-            socialBg.style.height = '64px';
-    } 
+    socialBg.classList.toggle('expanded');
+    myLogo.classList.toggle('expanded');
 }
 
 //
@@ -152,5 +139,13 @@ function expandSocialMedias() {
 const projectosButton = document.querySelector('.button-slide-to-proj');
 
 projectosButton.addEventListener('click', () => {
-    scroll({ top: window.innerHeight, behavior: 'smooth'});
+    scroll({ top: window.innerHeight, behavior: 'smooth' });
 })
+
+const upArrow = document.querySelector('.up-arrow')
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+upArrow.addEventListener('click', scrollToTop)

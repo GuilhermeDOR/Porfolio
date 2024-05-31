@@ -29,6 +29,25 @@ main {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.493);
 }
 
+main h3 {
+  padding: 5px 15px;
+  border-top: 1px rgb(66, 44, 1) solid;
+  border-radius: 30px;
+  filter: drop-shadow(2px 4px 7px rgb(255, 254, 177));
+}
+
+.destaques {
+  margin: 10px 0;
+  color: #cb572a;
+}
+
+.others {
+  margin: 30px 0 10px;
+  color: #4a4542;
+  font-size: 1.35em;
+  border-radius: 10px;
+}
+
 h3 {
   font-size: 1.8em;
   font-weight: 700;
@@ -36,7 +55,7 @@ h3 {
 
 p {
   font-weight: 400;
-  font-size: 1.3em;
+  font-size: 1.15em;
 }
 
 a {
@@ -97,9 +116,10 @@ a {
 }
 
 .sec-top-first-div p {
-  width: 85%;
-  line-height: 35px;
+  width: 80%;
+  line-height: 30px;
   text-align: justify;
+  font-size: 1.25em;
 }
 
 .sec-top-first-div button {
@@ -157,27 +177,38 @@ h2 {
   text-shadow: 2px 2px 2px rgb(99, 88, 73);
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  width: 100%;
-  justify-items: center;
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
 }
 
-.project-spoiler {
-  display: flex;
-  min-width: 329.22px;
-  height: 165px;
-  cursor: pointer;
-  border: 4px rgb(207, 189, 145) solid;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgb(109, 99, 74);
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  justify-items: center;
 }
 
 .project {
   display: flex;
   transition: 0.3s;
+  transform: scale(1);
+  cursor: pointer;
+  max-width: 400px;
+  max-height: 200px;
+}
+
+.project-spoiler {
+  display: flex;
+  width: 100%;
+  border: 4px rgb(207, 189, 145) solid;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgb(109, 99, 74);
+  -webkit-user-drag: none;
 }
 
 .project:hover {
@@ -186,11 +217,15 @@ h2 {
 
 #grid-container-more-projects {
   display: none;
-  margin: 40px 0 0;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  width: 100%;
+  justify-items: center;
 }
 
 .extra-project-visibility {
   visibility: hidden;
+  display: none;
 }
 
 .project-board {
@@ -198,7 +233,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr;
   padding: 3px;
-  height: 165px;
+  height: 100%;
   align-items: center;
   border-top: 4px solid;
   border-left: 4px solid;
@@ -213,6 +248,10 @@ h2 {
 .project-board img {
   border-radius: 15%;
   width: 35px;
+}
+
+.mini-board img {
+  width: 25px;
 }
 
 #project-page {
@@ -230,15 +269,14 @@ h2 {
 }
 
 #close-button {
-  max-width: 28px;
-  height: 154px;
+  width: 40px;
   border: none;
   border-radius: 4px 0 0 4px;
-  background-color: rgb(112, 71, 71);
   cursor: pointer;
-  color: rgb(207, 207, 207);
-  font-size: 20px;
-  font-weight: 300;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  opacity: 0.7;
 }
 
 #project-page .content {
@@ -332,9 +370,25 @@ h2 {
   height: 64px;
   width: 64px;
   border-radius: 40px;
-  background-color: rgb(141, 141, 141);
+  background-color: rgb(146, 136, 136);
   transition: 0.5s;
   z-index: 2;
+}
+
+.sec-social-medias.expanded {
+  height: 185px;
+}
+.sec-social-medias.expanded .linkedin {
+  transform: translateY(-140%);
+  opacity: 1;
+}
+.sec-social-medias.expanded .github {
+  transform: translateY(-260%);
+  opacity: 1;
+}
+
+#my-logo.expanded {
+  opacity: 1;
 }
 
 #my-logo {
@@ -354,6 +408,18 @@ h2 {
   opacity: 0;
 }
 
+.up-arrow {
+  width: 20px;
+  position: fixed;
+  bottom: 15px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.up-arrow:hover {
+  transform: translateY(-3px);
+}
+
 @media screen and (max-width: 1070px) {
   html,
   body {
@@ -364,6 +430,14 @@ h2 {
 
   .project-board {
     width: 3em;
+  }
+
+  .mini-board {
+    width: 1.5em;
+  }
+
+  .mini-board img {
+    width: 15px;
   }
 
   #my-logo {
@@ -386,11 +460,7 @@ h2 {
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
-  }
-
-  #grid-container-more-projects {
-    margin: 50px 0;
+    gap: 40px;
   }
 }
 
@@ -402,32 +472,26 @@ h2 {
     height: auto;
   }
 
+  header {
+    padding: 20px 25px;
+  }
+
   .sec-top-first-div {
     flex-direction: column;
   }
 
-  .section-top div {
-    padding-bottom: 25px;
-    gap: 25px;
+  .sec-top-first-div div {
+    gap: 15px;
   }
 
-  .section-top h1 {
-    font-size: 1.8em;
+  .sec-top-first-div p {
     text-align: center;
-  }
-
-  .section-top p {
-    text-align: center;
-    line-height: 30px;
-    font-size: 1.1em;
-  }
-
-  .section-top button {
-    font-size: 1em;
+    width: 90%;
   }
 
   .foto {
-    width: 65%;
+    width: 50%;
+    margin-top: 10px;
   }
 
   .section-mains {
@@ -440,8 +504,15 @@ h2 {
   }
 
   .project-board {
-    height: 193px;
     width: 3em;
+  }
+
+  .mini-board {
+    width: 2em;
+  }
+
+  .mini-board img {
+    width: 20px;
   }
 
   #placed-project {
@@ -455,33 +526,39 @@ h2 {
   .grid-container {
     display: grid;
     grid-template-columns: 1fr;
+    width: 90%;
     gap: 40px;
   }
 
   #grid-container-more-projects {
-    margin: 40px 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
   .project-spoiler {
-    height: 193px;
-    min-width: 387.98px;
+    width: 100%;
   }
 
   #close-button {
-    font-size: 18px;
-    width: 25px;
+    width: 30px;
+    position: absolute;
+    top: 1.5%;
+    right: 2%;
+    background-color: rgb(197, 197, 197);
   }
 }
 
 @media screen and (max-width: 400px) {
-  .project-spoiler {
-    height: 150px;
-    min-width: 315px;
-    width: 315px;
+  header {
+    padding: 15px 20px;
   }
 
-  .project-board {
-    height: 150px;
+  header a {
+    font-size: 18px;
+  }
+
+  .project-spoiler {
+    width: 100%;
   }
 
   #project-page h3 {
